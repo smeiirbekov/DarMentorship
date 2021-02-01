@@ -11,6 +11,11 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel:MainViewModel by viewModels()
 
+    private val someString: String by DelegateExample()
+
+    private val someString2: String by DelegateExample("Constructred")
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -62,6 +67,8 @@ class MainActivity : AppCompatActivity() {
         Log.d("Main", "isEqual: ${s1 === s2}") // True
         Log.d("Main", "isEqual: ${s1 === ss}") // True
 
+        Log.d("Main", "DelegateTest: ${someString}")
+        Log.d("Main", "DelegateTest2: ${someString2}")
     }
 
     lateinit var s: SomeEnum
