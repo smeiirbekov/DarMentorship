@@ -28,4 +28,10 @@ class MainActivity : AppCompatActivity() {
         // adapter.submitlist(list)
     // }
     }
+
+//    private fnu test(callback: Callback<Task>) {
+    // callback.success(Task)
+    // callback.error()
+//    }
+
 }

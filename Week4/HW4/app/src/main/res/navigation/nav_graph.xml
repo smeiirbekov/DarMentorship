@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main">
+
+    <fragment
+        android:id="@+id/main"
+        android:label="Main"
+        android:name="com.sm.hw4.ui.MainFragment" >
+        <action
+            android:id="@+id/action_main_to_new_users"
+            app:destination="@id/new_users" />
+        <action
+            android:id="@+id/action_main_to_records"
+            app:destination="@id/records" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/new_users"
+        android:label="Users"
+        android:name="com.sm.hw4.ui.NewUsersFragment" >
+        <action
+            android:id="@+id/action_new_users_to_game"
+            app:destination="@id/game" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/records"
+        android:label="Records"
+        android:name="com.sm.hw4.ui.RecordsFragment" />
+
+    <fragment
+        android:id="@+id/game"
+        android:label="Game"
+        android:name="com.sm.hw4.ui.GameFragment" >
+        <action
+            android:id="@+id/action_game_to_records"
+            app:destination="@id/records"
+            app:popUpTo="@id/main" />
+        <argument
+            android:name="user_x"
+            app:argType="string" />
+        <argument
+            android:name="user_o"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
